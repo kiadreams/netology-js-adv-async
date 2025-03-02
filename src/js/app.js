@@ -1,19 +1,4 @@
-import read from "./reader.js";
-import json from "./parser.js";
-
-
-export default class GameSavingLoader {
-  static load() {
-    return read()
-      .then(data => {
-        return json(data);
-      });
-  }
-
-  static async load2() {
-    return json(await read());
-  }
-}
+import GameSavingLoader from "./GameSavingLoader.js";
 
 
 GameSavingLoader.load()
